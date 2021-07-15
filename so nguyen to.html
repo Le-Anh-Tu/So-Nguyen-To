@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    // Kiểm tra 1 số nhập vào có phải là số nguyên tố hay không?
+    function checkNumber(n) {
+        if (n < 2) {
+            return false;
+        }
+        if (n == 2) {
+            return true;
+        }
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        } return true;
+    }
+
+
+    // In ra numbers số nguyên tố đầu tiên
+    let numbers = prompt("Nhập số lượng số nguyên tố muốn hiển thị: ");
+    let count;
+    let n = 2;
+    for (count = 0; count <= numbers; n++) {
+        if (checkNumber(n)){
+            count++;
+            document.write(n +"<br>");
+        }
+    }
+
+
+</script>
+</body>
+</html>
